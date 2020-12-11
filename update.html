@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Yangilash</title>
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .content {
+        width: 500px;
+        height: max-content;
+        margin: auto;
+    }
+
+    .form {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    input {
+        padding: 3px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Vazifani yangilash</h1>
+
+    <form action="/update/{{task.id}}" method="POST" class="form">
+        <input type="text" name="content" id="content" value="{{task.content}}">
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}
